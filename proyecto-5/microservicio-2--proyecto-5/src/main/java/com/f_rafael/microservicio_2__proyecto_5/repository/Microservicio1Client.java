@@ -1,15 +1,14 @@
 package com.f_rafael.microservicio_2__proyecto_5.repository;
 
-import com.f_rafael.microservicio_2__proyecto_5.dto.PersonajeDto;
+import java.util.List;
+
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.List;
+import com.f_rafael.microservicio_2__proyecto_5.dto.PersonajeDto;
 
-@FeignClient(name = "microservicio-1", url="http://localhost:8080")
+@FeignClient(name = "microservicio-1", url="http://microservicio-1-p-5:8080")
 public interface Microservicio1Client {
 
     @GetMapping("/personajes")

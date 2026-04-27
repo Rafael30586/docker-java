@@ -1,0 +1,10 @@
+
+services:
+  microservicio-1-p-5:
+    build: microservicio-1--proyecto-5/
+    ports:
+      - "8080:8080"
+  microservicio-2-p-5:
+    build: microservicio-2--proyecto-5/
+    ports:
+      - "8081:8081"
