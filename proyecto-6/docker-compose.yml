@@ -1,0 +1,44 @@
+
+
+services: 
+  microservicio-alimentos-p-6:
+    build: microservicio-alimentos/
+    ports:
+      - "8080:8080"
+    depends_on:
+      - alimentos-db
+  microservicio-marca-p-6:
+    build: microservicio-marcas/
+    ports:
+      - "8081:8080"
+    depends_on:
+      - marcas-db
+  microservicio-clasificacion-p-6:
+    build: microservicio-clasificaciones/
+    ports:
+      - "8082:8080"
+    depends_on:
+      - clasificaciones-db
+  alimentos-db:
+    image: mysql:8.3.0
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=alimentos
+  marcas-db:
+    image: mysql:8.3.0
+    ports:
+      - "3308:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=marcas_alimentos
+  clasificaciones-db:
+    image: mysql:8.3.0
+    ports:
+      - "3309:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=clasificacion_alimentos
+
+
